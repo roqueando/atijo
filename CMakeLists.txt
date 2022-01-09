@@ -3,10 +3,11 @@ project(atijo)
 
 add_executable(${PROJECT_NAME} src/main.cc)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_subdirectory(external/crow)
+add_subdirectory(external/httplib)
+add_subdirectory(external/rtc)
 
 find_package(Boost)
 if(Boost_FOUND)
@@ -14,12 +15,13 @@ if(Boost_FOUND)
 endif()
 
 target_include_directories(${PROJECT_NAME}
+    PUBLIC external/httplib
+    PUBLIC external/rtc/include
 )
 
 target_link_directories(${PROJECT_NAME}
-    PRIVATE external/evpp
-    PRIVATE external/glog/src
-    PRIVATE external/event
+    PRIVATE external/httplib
+    PRIVATE external/rtc/src
 )
 
-target_link_libraries(${PROJECT_NAME} evpp)
+target_link_libraries(${PROJECT_NAME} httplib rtc)

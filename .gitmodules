@@ -1,0 +1,12 @@
+[submodule "external/crow"]
+	path = external/crow
+	url = https://github.com/CrowCpp/Crow
+[submodule "external/cpp-httplib"]
+	path = external/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib
+[submodule "external/uWebSockets"]
+	path = external/uWebSockets
+	url = https://github.com/uNetworking/uWebSockets
+[submodule "external/rtc"]
+	path = external/rtc
+	url = https://github.com/paullouisageneau/libdatachannel
